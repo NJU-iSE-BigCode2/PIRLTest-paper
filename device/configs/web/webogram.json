@@ -1,0 +1,18 @@
+{
+	"platform": "web", 
+	"screen_size": [1366, 613], 
+	"pre_interact": true,
+	"remote_port": 5000,
+	"server_proj_dir": "urt_backend-0", 
+	"server_screenshot_dir": "screenshots",
+	"local_screenshot_path": "screenshot-webogram.png",
+	"window_keys": "", 
+	"total_time": 5400,
+	"banner_height": 85,
+	"app": {
+		"name": "webogram", 
+		"url": "http://localhost:5202",
+		"pkg": "",
+		"main_activity": ""
+	}
+}

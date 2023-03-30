@@ -1,0 +1,17 @@
+{
+	"platform": "android", 
+	"serial_no": "192.168.31.144:5000",
+	"screen_size": [720, 1560], 
+	"server_proj_dir": "urt_backend-2", 
+	"server_screenshot_dir": "screenshots",
+	"local_screenshot_path": "screenshot-wikipedia.png",
+	"window_keys": "", 
+	"total_time": 5400,
+	"banner_height": 85,
+	"remote_port": 5002,
+	"app": {
+		"name": "Wikipedia",
+		"pkg": "org.wikipedia",
+		"main_activity": "org.wikipedia.test.InstrumentedActivity"
+	}
+}

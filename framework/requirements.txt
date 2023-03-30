@@ -1,0 +1,6 @@
+baidu-aip
+apted
+opencv-python==4.2.0.32
+flask
+tensorflow-gpu==1.13.1
+keras==2.3.1

@@ -1,0 +1,2 @@
+model_checkpoint_path: "tree_edit_dist"
+all_model_checkpoint_paths: "tree_edit_dist"
