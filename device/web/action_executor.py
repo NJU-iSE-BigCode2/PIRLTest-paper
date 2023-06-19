@@ -29,7 +29,7 @@ class WebExecutor(WebToolBase):
         x = args[0][0] + args[0][2] // 2
         y = args[0][1] + args[0][3] // 2
         ActionChains(self.driver).move_by_offset(x, y).click().perform()
-        self._switch_handle() #需要先切换句柄再移动坐标，否则速度很慢
+        self._switch_handle() #switch handle to improve speed
         self._move(-x, -y)
         if not self.home_url in self.driver.current_url:
             # Back to the app if jumped to another website.
@@ -43,7 +43,7 @@ class WebExecutor(WebToolBase):
         self._move(-x, -y)
 
     def write(self, *args):
-        """区别于elem定位，对于输入框，需要先点击后才能进行输入"""
+        """first click second input"""
         x = args[0][0] + args[0][2] // 2
         y = args[0][1] + args[0][3] // 2
         ActionChains(self.driver).move_by_offset(x, y).click().send_keys('test').perform()
@@ -58,7 +58,7 @@ class WebExecutor(WebToolBase):
         return True
 
     def back(self):
-        """返回上一级界面"""
+        """return"""
         url = self.driver.current_url
         if self._can_back_on(url):
             self.driver.back()
@@ -70,7 +70,7 @@ class WebExecutor(WebToolBase):
             self.driver.get(self.home_url)
 
     def scroll(self):
-        """向下滑动半屏"""
+        """half page down"""
         js = f"window.scrollBy(0, document.body.clientHeight / 2)"
         self.driver.execute_script(js)
 
@@ -107,10 +107,7 @@ class WebExecutor(WebToolBase):
 
 def main():
     """
-        测试功能：打开链接->新的标签页；
-                切换原本初始页面;
-                输入，点击搜索，向下滑动500个像素；
-                返回初始页面。
+    a small test demo
     """
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable - logging'])
@@ -120,26 +117,23 @@ def main():
     web_exe.driver.get("http://www.baidu.com")
     web_exe.driver.implicitly_wait(10)
     h = web_exe.driver.current_window_handle
-    #点击热搜中某一栏
     x,y = 527, 332
     web_exe.left_click(x, y)
-    #切换回来
     #web_exe.driver.switch_to.window(h)
     web_exe._switch_handle(h)
-    #输入栏
     x,y = 527+20, 219+0.5
     #web_exe.left_click(x, y)
-    web_exe.write("软件测试", x, y)
+    web_exe.write("Software Testing", x, y)
     time.sleep(1)
 
     x,y = 725+0.5, 15+0.5
     web_exe.left_click(x, y)
 
     time.sleep(1)
-    #向下滑动600个像素点
+    #600 pixals down
     web_exe.scroll(600)
     time.sleep(2)
-    #返回到上一级
+    #return
     web_exe.back()
     time.sleep(1)
     web_exe.driver.quit()

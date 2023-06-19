@@ -12,16 +12,16 @@ import traceback
 app = Flask(__name__)
 launcher = BackendLauncher()
 
-@app.route('/urt-backend/sys-info', methods=['POST'])
+@app.route('/pirltest-backend/sys-info', methods=['POST'])
 def update_sys_info():
     launcher.update_sys_info(request.get_json())
     return ''
 
-@app.route('/urt-backend/sys-info')
+@app.route('/pirltest-backend/sys-info')
 def get_sys_info():
     return launcher.sys_info
 
-@app.route('/urt-backend/next-action')
+@app.route('/pirltest-backend/next-action')
 def gen_next_action():
     image_path = request.args.get('image_path')
     logger.debug(f'image_path = {image_path}')

@@ -1,6 +1,5 @@
 '''
 IMPORTANT: This script has secret key configured in method `ocr`. DO NOT spread it publicly.
-重要：该脚本包含密钥，请勿公开传播。
 '''
 
 import os

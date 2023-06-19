@@ -3,7 +3,7 @@ import datetime
 
 
 logging.basicConfig()
-logger = logging.getLogger('urt')
+logger = logging.getLogger('pirltest')
 
 def init_logger(filepath, mode='a'):
     logger.setLevel(logging.DEBUG)
@@ -30,4 +30,4 @@ def get_now_str():
     return now_str
 
 
-init_logger(f'logs/urt-frontend-{get_now_str()}.log', 'w')
+init_logger(f'logs/pirltest-frontend-{get_now_str()}.log', 'w')

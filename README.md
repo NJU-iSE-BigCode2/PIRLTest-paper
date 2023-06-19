@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ### Run
 For Android app testing, use the following command:
 ```sh
-python urt_android.py <config_path>
+python pirltest_android.py <config_path>
 ```
 
 For Web app testing, use the following command:

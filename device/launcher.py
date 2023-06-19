@@ -10,14 +10,14 @@ from logger import logger
 def push_sys_info(sys_info, remote_port):
     sys_info_str = json.dumps(sys_info)
     cmd = 'curl -X POST -H "Content-Type: application/json" '\
-          f'-d \'{sys_info_str}\' http://localhost:{remote_port}/urt-backend/sys-info'
+          f'-d \'{sys_info_str}\' http://localhost:{remote_port}/pirltest-backend/sys-info'
     output, _ = ssh_exec_cmd(cmd)
     output = output.decode()
     if output:
         logger.debug('Output when pushing system info:', output)
 
 def get_next_action(image_path, remote_port):
-    cmd = f'curl -G --data-urlencode "image_path={image_path}" http://localhost:{remote_port}/urt-backend/next-action'
+    cmd = f'curl -G --data-urlencode "image_path={image_path}" http://localhost:{remote_port}/pirltest-backend/next-action'
     output, _ = ssh_exec_cmd(cmd)
     output = output.decode()
     return output

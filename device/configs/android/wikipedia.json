@@ -2,7 +2,7 @@
 	"platform": "android", 
 	"serial_no": "192.168.31.144:5000",
 	"screen_size": [720, 1560], 
-	"server_proj_dir": "urt_backend-2", 
+	"server_proj_dir": "pirltest_backend-2", 
 	"server_screenshot_dir": "screenshots",
 	"local_screenshot_path": "screenshot-wikipedia.png",
 	"window_keys": "", 

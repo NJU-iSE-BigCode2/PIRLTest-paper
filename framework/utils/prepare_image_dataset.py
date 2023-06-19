@@ -15,7 +15,7 @@ def crawl_image(url, save_path, max_trial_count=5):
             logging.debug(f'Request failure: {url}. Status is {r.status_code}.')
     return False
 
-def prepare_images(json_path, num_images=10, save_dir='drive/MyDrive/urt_data/images'):
+def prepare_images(json_path, num_images=10, save_dir='drive/MyDrive/data/images'):
     with open(json_path) as f:
         dataset = json.load(f)
 

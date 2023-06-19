@@ -1,9 +1,9 @@
 '''
-该脚本包含了与布局提取相关的函数，包括三层布局提取，纯结构的控件树的生成，以及该控件树的两种（先根后根深度优先）遍历序列的生成。
-主要功能函数分别为：
-- layout(bounding, resolution): 三层布局提取
-- generate_tree_struct(groups): 纯结构控件树的生成
-- generate_layout_seqs(image_path): 从截屏文件生成纯结构控件树以及两种遍历序列
+This script contains functions about layout characterization
+
+- layout(bounding, resolution): layout characterization
+- generate_tree_struct(groups): widget tree generation
+- generate_layout_seqs(image_path): from screenshot to widget tree
 '''
 
 from img_process import canny_ocr

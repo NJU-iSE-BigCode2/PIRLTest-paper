@@ -2,7 +2,7 @@ import logging
 
 
 logging.basicConfig()
-logger = logging.getLogger('urt')
+logger = logging.getLogger('pirltest')
 
 def init_logger(filepath, mode='a'):
     logger.setLevel(logging.DEBUG)
@@ -25,4 +25,4 @@ def init_logger(filepath, mode='a'):
 
     logger.info('Logger inited.')
 
-init_logger('urt-backend.log', 'w')
+init_logger('pirltest-backend.log', 'w')
